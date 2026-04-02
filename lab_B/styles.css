@@ -1,0 +1,98 @@
+body {
+    background-color: #f3fff3; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.search-section, .add-section {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input[type="text"], input[type="datetime-local"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    gap: 10px;
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    cursor: text;
+}
+
+.task-text {
+    font-weight: bold;
+}
+
+.task-date {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    width: 100%;
+}
+
+mark {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.edit-input {
+    width: 100%;
+    margin-bottom: 5px;
+}
