@@ -1,57 +1,34 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Filip Stanew (57846) - PTW LAB C</title>
-
-    <link rel="stylesheet" href="styles.css" type="text/css">
-    <script src="scripts.js" defer></script>
+    <title>PTW LAB C - Puzzle</title>
+ 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Układanka Mapowa - LAB C</h1>
-        <div class="controls">
-            <button id="getLocation">Moja lokalizacja</button>
-            <button id="saveMap">Pobierz mapę</button>
-        </div>
-    </header>
-
-    <main>
-        <div class="top-container">
-            
-            <section id="map-container">
-                <h2>Mapa dynamiczna</h2>
-                <div id="map" style="height: 400px; width: 100%;"></div>
-            </section>
-
-            
-            <section id="puzzle-board-container">
-                <h2>Miejsce na puzzle</h2>
-                <div id="puzzle-board" class="grid-4x4">
-                    
-                </div>
-            </section>
-        </div>
-
-        
-        <section id="puzzle-pieces-container">
-            <h2>Puzzle</h2>
-            <div id="puzzle-pieces" class="pieces-pool">
-             
-            </div>
-        </section>
-    </main>
+    <div id="ui">
+        <button id="btn-geo">Moja lokalizacja</button>
+        <button id="btn-save">Pobierz mapę</button>
+    </div>
 
   
-    <canvas id="mapCanvas" style="display:none;"></canvas>
+    <div id="map-container"></div>
 
-   
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-   
+    <div id="game-container">
+        <div>
+            <h3>Rozsypane</h3>
+            <div id="puzzle-table" class="puzzle-grid"></div>
+        </div>
+        <div>
+            <h3>Miejsce układania</h3>
+            <div id="puzzle-board" class="puzzle-grid"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
