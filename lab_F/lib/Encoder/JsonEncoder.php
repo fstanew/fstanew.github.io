@@ -1,14 +1,14 @@
 <?php
 namespace App\Encoder;
 
-class YamlEncoder implements EncoderInterface {
+class JsonEncoder implements EncoderInterface {
     public function supports(string $format): bool {
-        return $format === 'YAML';
+        return $format === 'JSON';
     }
     public function decode(string $data, string $format = ''): array {
-        return yaml_parse($data) ?: [];
+        return json_decode($data, true) ?? [];
     }
     public function encode(array $data, string $format = ''): string {
-        return yaml_emit($data);
+        return json_encode($data, JSON_PRETTY_PRINT);
     }
 }
