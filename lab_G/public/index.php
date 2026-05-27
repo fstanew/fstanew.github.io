@@ -38,6 +38,41 @@ switch ($action) {
         $controller = new \App\Controller\PostController();
         $view = $controller->deleteAction($_REQUEST['id'], $router);
         break;
+        
+    // --- TUTAJ DODANE SĄ AKCJE DLA CAR (SAMOCHODÓW) ---
+    case 'car-index':
+        require_once __DIR__ . '/../src/Model/Car.php';
+        require_once __DIR__ . '/../src/Controller/CarController.php';
+        $controller = new \App\Controller\CarController();
+        $view = $controller->indexAction($templating, $router);
+        break;
+    case 'car-create':
+        $controller = new \App\Controller\CarController();
+        $view = $controller->createAction($_REQUEST['car'] ?? null, $templating, $router);
+        break;
+    case 'car-edit':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\CarController();
+        $view = $controller->editAction($_REQUEST['id'], $_REQUEST['car'] ?? null, $templating, $router);
+        break;
+    case 'car-show':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\CarController();
+        $view = $controller->showAction($_REQUEST['id'], $templating, $router);
+        break;
+    case 'car-delete':
+        if (! $_REQUEST['id']) {
+            break;
+        }
+        $controller = new \App\Controller\CarController();
+        $view = $controller->deleteAction($_REQUEST['id'], $router);
+        break;
+
+
     case 'info':
         $controller = new \App\Controller\InfoController();
         $view = $controller->infoAction();

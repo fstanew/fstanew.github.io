@@ -14,13 +14,13 @@ spl_autoload_register(function (string $class): void {
     }
 });
 
-// Zmienne domyślne
+
 $inputData = '';
 $inputFormat = 'CSV';
 $outputFormat = 'JSON';
 $outputData = '';
 
-// Odbieranie danych z POST lub ciasteczek
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $inputData = $_POST['input_data'] ?? '';
     $inputFormat = $_POST['input_format'] ?? 'CSV';
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $outputFormat = $_COOKIE['output_format'] ?? $outputFormat;
 }
 
-// Konwersja, jeśli są dane
+
 if (!empty($inputData)) {
     $serializer = new \App\Serializer([
         new \App\Encoder\JsonEncoder(),
