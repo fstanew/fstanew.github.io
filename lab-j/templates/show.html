@@ -1,0 +1,6 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>{{ car['brand'] }}</h1>
+    <p>{{ car['model'] }}</p>
+    <a href="{{ url_for('index') }}">Powrót</a>
+{% endblock %}

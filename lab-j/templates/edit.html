@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Edytuj: {{ car['brand'] }} {{ car['model'] }}</h1>
+    <form method="post">
+        <input type="text" name="brand" value="{{ car['brand'] }}" required><br>
+        <input type="text" name="model" value="{{ car['model'] }}" required><br>
+        <button type="submit">Aktualizuj</button>
+    </form>
+    <form action="{{ url_for('delete', id=car['id']) }}" method="POST" onsubmit="return confirm('Na pewno usunąć?');">
+        <button type="submit" style="color:red">USUŃ AUTO</button>
+    </form>
+{% endblock %}

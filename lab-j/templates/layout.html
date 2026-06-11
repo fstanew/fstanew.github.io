@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Moje Auta Flask</title>
+    <style>
+        body { font-family: sans-serif; margin: 30px; line-height: 1.6; }
+        nav { margin-bottom: 20px; background: #eee; padding: 10px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background: #f4f4f4; }
+        .btn { padding: 5px 10px; text-decoration: none; border: 1px solid #000; color: #000; }
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>🚗 AutoManager Flask</strong> | 
+        <a href="{{ url_for('index') }}">Strona Główna</a>
+    </nav>
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

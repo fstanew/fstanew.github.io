@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Lista Aut (Flask)</h1>
+    <a href="{{ url_for('create') }}">[+] Dodaj nowe</a>
+    <table border="1" style="width:100%; margin-top:10px;">
+        <tr><th>ID</th><th>Marka (Brand)</th><th>Model</th><th>Akcje</th></tr>
+        {% for car in cars %}
+        <tr>
+            <td>{{ car['id'] }}</td>
+            <td>{{ car['brand'] }}</td>
+            <td>{{ car['model'] }}</td>
+            <td>
+                <a href="{{ url_for('show', id=car['id']) }}">Podgląd</a> | 
+                <a href="{{ url_for('edit', id=car['id']) }}">Edycja</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
