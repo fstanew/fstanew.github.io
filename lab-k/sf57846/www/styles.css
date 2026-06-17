@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c3e50;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.kontener {
+    width: 100%;
+    max-width: 800px;
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.wyszukiwarka {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+
+.karta-aktualna {
+    background-color: #2980b9;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.siatka-prognozy {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.karta-prognozy {
+    background-color: #16a085;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9em;
+}
