@@ -1,3 +1,217 @@
+/* style-2.css - Mroczny, hakerski styl terminala */
+
+/* Reset marginesów i dopełnień */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  background-color: #ecfbe6;
+    font-family: 'Courier New', Courier, monospace; /* Czcionka terminalowa */
+    line-height: 1.6;
+    color: #a5b4c4;
+    /* Radialny gradient imitujący niebieskie światło reflektora u góry */
+    background: radial-gradient(circle at top, #112233 0%, #06090e 65%) no-repeat #06090e;
+    padding-bottom: 0;
+    background-attachment: fixed;
+}
+
+/* Kontener dla głównej zawartości */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Układ dwukolumnowy CSS Grid dla desktopów - znacząca zmiana struktury */
+@media (min-width: 900px) {
+    main {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 30px;
+    }
+    .hero {
+        grid-column: span 2; /* Baner hero rozciąga się na pełną szerokość */
+    }
+}
+
+/* Nagłówek (Header) */
+header {
+    background-color: rgba(6, 9, 14, 0.95);
+    border-bottom: 2px solid #00f0ff; /* Neonowa ramka u dołu */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); /* Poświata logotypu */
+}
+
+header .logo span {
+    color: #00f0ff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #a5b4c4;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header nav a:hover {
+    color: #00f0ff;
+    text-shadow: 0 0 8px #00f0ff;
+}
+
+/* Sekcja Hero (Konsolowy interfejs) */
+.hero {
+    background-color: rgba(13, 20, 30, 0.8);
+    border: 1px solid #00f0ff;
+    color: #00f0ff;
+    padding: 50px 30px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+    position: relative;
+}
+
+/* Oznaczenie systemowe w rogu konsoli */
+.hero::before {
+    content: "[SYSTEM STATUS: ACTIVE]";
+    font-size: 12px;
+    color: #00f0ff;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    opacity: 0.7;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.hero .lead {
+    font-size: 16px;
+    color: #a5b4c4;
+    max-width: 900px;
+    margin: 0;
+}
+
+/* Bloki sekcji artykułów */
+section {
+    background-color: rgba(13, 20, 30, 0.6);
+    padding: 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    border-color: #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+/* Znak zachęty konsoli przed nagłówkiem H2 */
+h2::before {
+    content: "> ";
+    color: #00f0ff;
+    margin-right: 10px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #00f0ff;
+    margin: 25px 0 15px 0;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 14px;
+}
+
+/* Lista oferowanych usług (terminalowa) */
+.services-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.services-list li {
+    background-color: rgba(6, 9, 14, 0.8);
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.services-list li strong {
+    color: #00f0ff;
+}
+
+/* Stopka (Footer) */
+footer {
+    background-color: #06090e;
+    border-top: 1px solid #00f0ff;
+    color: #a5b4c4;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    color: #556677;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Responsywność dla ekranów mobilnych (np. 375px) */
+@media (max-width: 899px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    section {
+        padding: 20px;
+    }
 }
